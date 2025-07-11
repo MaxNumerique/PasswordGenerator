@@ -21,8 +21,8 @@ class PasswordManager:
         """
         # Créer une clé à partir du mot de passe maître
         key = hashlib.pbkdf2_hmac('sha256', 
-                                 self.master_password.encode(), 
-                                 b'salt_', 100000)
+                                self.master_password.encode(), 
+                                b'salt_', 100000)
         key = base64.urlsafe_b64encode(key)
         self.cipher = Fernet(key)
     
